@@ -17,9 +17,9 @@ Laravel Passport is an OAuth2 server and API authentication package.
 ## How to run
 - Create new a database on localhost
 - Open .env file on the project to settup environment configuration 
-    DB_DATABASE= [database name]
-    DB_USERNAME= [database user name]
-    DB_PASSWORD= [database password]
+    - DB_DATABASE= [database name]
+    - DB_USERNAME= [database user name]
+    - DB_PASSWORD= [database password]
 
 - Migrate the database
     `php artisan migrate`

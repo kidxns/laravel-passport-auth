@@ -9,10 +9,10 @@ Laravel Passport is an OAuth2 server and API authentication package.
 - Postman, cURL, API Testing
 
 ## How to settup the project you clone
-`cd laravel-passport-auth`
-`composer install`
-`coppy (window) cp (macos) .env.example .env`
-`php artisan key:generate`
+* `cd laravel-passport-auth`
+* `composer install`
+* `coppy (window) cp (macos) .env.example .env`
+* `php artisan key:generate`
 
 ## How to run
 - Create new a database on localhost

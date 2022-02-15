@@ -9,39 +9,33 @@ use Illuminate\Http\Request;
 
 class PassportAuthController extends Controller
 {
-    public function register(Register $request){
+    public function register(Request $request)
+    {
 
         $user = User::create([
 
-            'name' => $request -> name,
-            'email' => $request -> email,
+            'name' => $request->name,
+            'email' => $request->email,
             'password' => bcrypt($request->password)
 
         ]);
-        $token = $user -> createToken('AuthApp')->accessToken;
-        return response()->json(['token' => $token],200);
-
-
-
+        $token = $user->createToken('AuthApp')->accessToken;
+        return response()->json(['token' => $token], 200);
     }
 
-    public function login(Request $request){
+    public function login(Request $request)
+    {
 
         $data = [
             'name' => $request->name,
             'password' => $request->password
         ];
-        if (auth()->attempt($data)){
+        if (auth()->attempt($data)) {
             $token = auth()->user()->createToken('AuthApp')->accessToken;
-            return response()->json(['token' => $token],200);
-
+            return response()->json(['token' => $token], 200);
+        } else {
+            return response()->json(['error' => 'Unauthorised'], 401);
         }
-        else {
-            return response()->json(['error' => 'Unauthorised'],401);
-        }
-
-
-
     }
 
 
